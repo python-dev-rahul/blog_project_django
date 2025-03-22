@@ -90,6 +90,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = "smtp.gmail.com"
@@ -106,3 +108,18 @@ STATICFILES_DIRS = [
 ]
 # Whitenoise use karne ke liye
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+# Cloudinary Configuration
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": "blog_project",
+    "API_KEY": "375329628811873",
+    "API_SECRET": "fSCVKWgbR0YF_p1aWQFT3q3ji28"
+}
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
