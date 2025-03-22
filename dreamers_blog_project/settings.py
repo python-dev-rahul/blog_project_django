@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY', 'your-default-secret-key')
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -28,6 +28,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -103,3 +104,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Yeh add karo
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),  # Agar aapne extra static folder banaya ho
 ]
+# Whitenoise use karne ke liye
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
