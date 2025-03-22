@@ -110,19 +110,6 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-
-# Cloudinary Configuration
-CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": "dxqwagjtp",
-    "API_KEY": "375329628811873",
-    "API_SECRET": "fSCVKWgbR0YF_p1aWQFT3q3ji28"
-}
-
-DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
