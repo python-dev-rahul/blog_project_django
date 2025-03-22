@@ -1,1 +1,1 @@
-web: gunicorn dreamers_blog_project.wsgi:application --bind 0.0.0.0:$PORT
+web: gunicorn dreamers_blog_project.wsgi:application
