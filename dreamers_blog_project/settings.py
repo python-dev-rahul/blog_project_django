@@ -117,7 +117,7 @@ import cloudinary.api
 
 # Cloudinary Configuration
 CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": "blog_project",
+    "CLOUD_NAME": "dxqwagjtp",
     "API_KEY": "375329628811873",
     "API_SECRET": "fSCVKWgbR0YF_p1aWQFT3q3ji28"
 }
