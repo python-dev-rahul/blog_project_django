@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% get_static_prefix %}css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="sidebar-main">
+        <div class="sidebar">
+            <a href="{% url 'admin-add-blog' %}">Add Blog</a><br>
+            <a href="{% url 'edit-blog' %}" class="admin-edit-blog">Edit Blog</a><br>
+        </div>
+        <div class="sidebar-form-edit-blog">
+            <p>Edit Blog</p>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <select name="user_input_value" id="">
+                    <option value="#" disabled >select by category</option>
+                    <option value="web development">web developemt</option>
+                    <option value="data analyst">data analayst</option>
+                    <option value="web designing">web designing</option>
+                    <option value="digital marketing">digital marketing</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+
+            <table border="1" width="max-content" class="table">
+                <tr style="background-color:rgba(117, 117, 117, 0.61)">
+                {% if matching_posts %}
+                  <th>image</th>
+                  <th>background_color</th>
+                  <th>heading</th>
+                  <th>title</th>
+                  <th>slug</th>
+                  <th>pub_date</th>
+                  <th>category</th>
+              </tr>
+              <tr>
+                {% for i in matching_posts %}
+                <td class="image_backend">                <a href="{% url 'blog_detail' slug=i.slug %}"  class="post-link" data-slug="{{ blog.slug }}"><img src="{{i.image.url}}" alt="{{i.appliciant_image }}"></a></td>
+                <td>{{i.background_color}}</td>
+                <td>{{i.heading}}</td>
+                <td>{{i.title  |truncatechars:200}}</td>
+                <td>{{i.slug}}</td>
+                <td>{{i.pub_date}}</td>
+                <td>{{i.category}}</td>
+                <td><a href="{% url 'updatepost' i.id %}">Edit Post</a></td>
+                <td>
+                    <form action="{% url 'delete-post' i.id %}">
+                        <button type="submit">Delete</button>
+                    </form>
+
+                </td>
+              </tr>
+              {% endfor %}
+              {% else %}
+                  <h1 style="color: red;">no data found</h1>
+              {% endif %}
+              </table>
+        </div>
+    </div>
+</body>
+</html>

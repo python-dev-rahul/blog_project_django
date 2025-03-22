@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% load django_browser_reload %}
+{% load static %}
+{% block extra_css %}
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="{% get_static_prefix %}css/style.css">
+{% endblock extra_css %}
+
+{% block post %}
+<div class="main_blog">
+    <form novalidate action="{% url 'home' %}" method="get">
+        <input type="text" name="search" value="{{ request.GET.search }}" id="search-input" placeholder="Search Blogs">
+        <button type="submit" class="button_search">search for more</button>
+    </form>
+
+    <p id="para"></p>
+
+    <div class="post" id="blog-posts">
+        <p class="latest_blogs"> Latest How-To Guides</p>
+        <p class="latest_blogs_desc">Our latest and greatest step-by-step guides on all SEO, link building, and content
+            marketing topics.</p>
+        <div class="blogs_post" id="original-posts">
+            {% for blog in blogs %}
+            <!-- <a href="#" class="post-link" data-slug="{{ blog.slug }}"> -->
+            <a href="{% url 'blog_detail' slug=blog.slug %}"  class="post-link" data-slug="{{ blog.slug }}">
+                <div class="post1">
+                    <div class="image_div"><img src="{{blog.image.url}}" alt=""></div>
+                    <div class="content">
+                        <p class="heading_blog">{{ blog.heading }}</p>
+                        <br>
+                        <!-- <p class="desc">{{blog.title |truncatechars:60}}<a
+                                    href="{% url 'blog_detail' slug=blog.slug %}">Read more</a></p>
+                            <p class="pub_date">{{blog.pub_date}}</p> -->
+                    </div>
+                </div>
+            </a>
+        <!-- </a> -->
+            {% endfor %}
+        </div>
+    </div>
+
+
+</div>
+
+
+<script>
+    // Your existing JavaScript code here
+    let originalPostsContainer = document.getElementById("original-posts");
+    let inputtext = document.getElementById("search-input");
+    let para = document.getElementById("para");
+
+    // Store the original posts in a variable to restore them when needed
+    let originalPosts = Array.from(originalPostsContainer.children);
+    console.log(originalPosts);
+
+    inputtext.addEventListener("input", function () {
+        // yeh h post more ka button
+        let k = document.getElementById("search-input").value;
+
+        if (k.length > 0) {
+            document.getElementsByClassName('button_search')[0].style.display = 'block';
+        }
+        else {
+            document.getElementsByClassName('button_search')[0].style.display = 'none';
+        }
+        // post more ka button end
+
+        let text = inputtext.value.toLowerCase();
+        console.log(text);
+        let galleryArray = document.getElementsByClassName('post-link');
+
+        let filterArray = Array.from(galleryArray).filter(function (a) {
+            let title = a.querySelector('.heading_blog').textContent.toLowerCase();
+            return title.includes(text);
+        });
+
+        if (text === "") {
+            showgallery(originalPosts);  // Restore the original posts
+            para.innerHTML = ""; // Clear the "No data found" message
+        } else {
+            if (filterArray.length === 0) {
+                para.innerHTML = "Click on search for more button to get better results";
+
+                showgallery(originalPosts); // Display default posts
+            } else {
+                para.innerHTML = "";
+                showgallery(filterArray);
+            }
+        }
+    });
+
+    function showgallery(elements) {
+        let blogsPostContainer = document.getElementsByClassName("blogs_post")[0];
+
+        // Clear the container
+        blogsPostContainer.innerHTML = "";
+
+        // Append each child individually to maintain the layout
+        for (let i = 0; i < elements.length; i++) {
+            blogsPostContainer.appendChild(elements[i].cloneNode(true));
+            // console.log(blogsPostContainer);
+            console.log(elements[i].cloneNode(true));
+        }
+
+
+
+    }
+    
+
+
+
+
+</script>
+
+{% endblock post %}
+{% block category %}
+
+    
+ <div class="all_category_main">
+        <div class="all_category_main_heading">
+            <p>Dreamers Resources Hubs</p>
+        </div>
+        {% for i in category %}
+        <div class="all_category">
+            <div class="all_category_child1">
+                <a href="{% url 'all_category' name=i.name %}">
+                    <img src="{{ i.image.url }}" alt="">
+                </a>
+            </div>
+            <div class="all_category_child2">
+                <div class="all_category_child21">
+                    <p>WHAT YOU'LL LEARN</p>
+                    <p>{{i.desc}}</p>
+                </div>
+            </div>
+            <div class="all_category_child3">
+                <p>FEATURED RESOURCES</p>
+                <div class="all_category_child31_recent_blogs">
+                    {% for blog in i.post_set.all %}
+                        <i class="fa-solid fa-square-up-right"></i><a href="{% url 'blog_detail' slug=blog.slug %}">{{ blog.heading }}</a><br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock category %}
+
+{% block footer %}
+<footer>
+    <div class="footer-main">
+        <div class="footer-main-child1">
+            <div class="logo-footer-main">
+                <p class="logo-footer">DREAMERS</p>
+                <p>Next-level SEO training and link <br>building strategies</p>
+            </div>
+            <div class="learn-section">
+                <p>Learn</p>
+                <p><a href="">Blog</a></p>
+                <p><a href="{% url 'newsletter' %}">Newsletter</a></p>
+                <p><a href="">SEO training</a></p>
+            </div>
+            <div class="company-section">
+                <p>Company</p>
+                <p><a href="{% url 'home' %}">Home</a></p>
+                <p><a href="{% url 'about_us' %}">About</a></p>
+                <p><a href="">Contact US</a></p>
+            </div>
+            <div class="Connect-section">
+                <p>Connect</p>
+                <a href=""><i class="fa-brands fa-youtube fa-xl icons" style="color: #a5aaae;"></i></a>
+               <a href=""> <i class="fa-brands fa-instagram fa-xl" style="color: #a5aaae;margin-left:10px;"></i></a>
+               <a href=""> <i class="fa-brands fa-twitter fa-xl" style="color: #a5aaae;margin-left:10px;"></i></a>
+            </div>
+        </div>
+        <div class="footer-main-child2">
+            <div class="footer-main-child21">
+                © 2023 Dreamers is a Trademark of Semrush Inc
+            </div>
+            <div class="footer-main-child22">
+                <p><a href="">Terms Of Service</a></p>
+                <p><a href="">Privacy Notice</a></p>
+            </div>
+
+        </div>
+
+    </div>
+</footer>
+{% endblock footer %}

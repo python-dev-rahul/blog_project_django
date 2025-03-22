@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% get_static_prefix %}css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+    {% include 'nav.html' %}
+
+    <!-- upper part  -->
+    <div class="Newsletter-container1">
+        <!-- ------------------Newsletter-section1----------- -->
+
+        <div class="Newsletter-section1">
+            <!-- ---------------Ns-letter-left------------ -->
+            <div class="Ns-letter-left">
+                <h1>Proven SEO Tips Straight to Your Inbox</h1>
+                <p>Get access to exclusive tips, strategies and case studies that I don't share anywhere else.</p>
+                <div class="bottom-btn">
+                    <input type="text" placeholder="Email Address">
+                    <button>Try it</button>
+                </div>
+            </div>
+            <!-- ---------------Ns-letter-right------------ -->
+
+            <div class="Ns-letter-right">
+                <img src="{% get_static_prefix %}images/sign-up-hero.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <!-- upper part end -->
+    <div class="section-2">
+        <div class="section-2-container">
+            <div class="heading">
+                <h2>Join 173,674 People That Get My Weekly SEO Tips via Email</h2>
+            </div>
+
+            <div class="comment-box">
+                <div class="heading">
+                    <h2>18 Newsletters That Will Make You A Better Entrepreneur</h2>
+                </div>
+            </div>
+            
+            <div class="img-container">
+                <img src="{% get_static_prefix %}images/asset 11.svg" alt="">
+                <img src="{% get_static_prefix %}images/asset 22.svg" alt="">
+                <img src="{% get_static_prefix %}images/asset 33.svg" alt="">
+                <img src="{% get_static_prefix %}images/asset 44.svg" alt="">
+                <img src="{% get_static_prefix %}images/asset 55.svg" alt="">
+            </div>
+
+            <form action="">
+                <input type="text" name="email" id="email" placeholder="Email Address">
+                <button>Try It</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer-main">
+            <div class="footer-main-child1">
+                <div class="logo-footer-main">
+                    <p class="logo-footer">DREAMERS</p>
+                    <p>Next-level SEO training and link <br>building strategies</p>
+                </div>
+                <div class="learn-section">
+                    <p>Learn</p>
+                    <p><a href="">Blog</a></p>
+                    <p><a href="{% url 'newsletter' %}">Newsletter</a></p>
+                    <p><a href="">SEO training</a></p>
+                </div>
+                <div class="company-section">
+                    <p>Company</p>
+                    <p><a href="{% url 'home' %}">Home</a></p>
+                    <p><a href="{% url 'about_us' %}">About</a></p>
+                    <p><a href="">Contact US</a></p>
+                </div>
+                <div class="Connect-section">
+                    <p>Connect</p>
+                    <a href=""><i class="fa-brands fa-youtube fa-xl icons" style="color: #a5aaae;"></i></a>
+                   <a href=""> <i class="fa-brands fa-instagram fa-xl" style="color: #a5aaae;margin-left:10px;"></i></a>
+                   <a href=""> <i class="fa-brands fa-twitter fa-xl" style="color: #a5aaae;margin-left:10px;"></i></a>
+                </div>
+            </div>
+            <div class="footer-main-child2">
+                <div class="footer-main-child21">
+                    © 2023 Dreamers is a Trademark of Semrush Inc
+                </div>
+                <div class="footer-main-child22">
+                    <p><a href="">Terms Of Service</a></p>
+                    <p><a href="">Privacy Notice</a></p>
+                </div>
+    
+            </div>
+    
+        </div>
+    </footer>
+</body>

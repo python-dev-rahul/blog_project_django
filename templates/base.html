@@ -1,0 +1,67 @@
+{% load django_browser_reload %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% get_static_prefix %}css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% block extra_css %}{% endblock extra_css %}
+</head>
+{% django_browser_reload_script %}
+<body>
+{% block nav%}
+    <!-- nav-bar starts -->
+        {% include 'nav.html' %}
+    <!-- nav ends -->
+    {% endblock nav%}
+    
+    
+    <!-- hero starts -->
+    {% block hero %}
+    <div class="hero">
+        <div class="hero-main">
+            <div class="hero-main-child">
+                <div class="heading">
+                    <p>WELCOME TO DREAMER</p>
+                </div>
+                <div class="main-heading">
+                    <h1>Where SEO best practices <br>
+                    meet real-world results.</h1>
+                </div>
+                <div class="about-me-parent">
+                <div class="about-me">
+                    
+                    <div class="about-me-child">
+                        <img src="{% get_static_prefix %}images/dummy-image.jpg" alt="">
+                       <p>“I thought the blog was good. But the newsletter?<br>Even better!”<br>
+                        Kieran Flanagan, VP Marketing at HubSpot</p>
+                    </div>
+                </div>
+            </div>
+    
+                <div class="form-email">
+                    <form novalidate action="{% url 'send_email' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="user_email" id="" placeholder="Email Address">
+                    <button type="submit">Try It</button>
+                    </form>
+                </div>
+            </div>  
+        </div>
+    </div>
+    {% endblock hero %}
+    <!-- hero ends -->
+
+{% block post %}
+{% endblock post %}
+{% block category %}
+{% endblock category %}
+{% block footer %}
+{% endblock footer %}
+
+</body>
+</html>
+

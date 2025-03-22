@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% get_static_prefix %}css/style.css">
+</head>
+<body>
+    
+
+<nav>
+    <div class="main-nav">
+        <div class="logo"><a href="{% url 'home' %}">DREAMERS</a></div>
+        <div class="menu">
+            <ul>
+                <a href="#">
+                    <li>Guides</li>
+                </a>
+                <a href="{% url 'about_us' %}">
+                    <li>About</li>
+                </a>
+                <a href="{% url 'newsletter' %}">
+                    <li>Newsletter</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+</nav>
+</body>
+</html>

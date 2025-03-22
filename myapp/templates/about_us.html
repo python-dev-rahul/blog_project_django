@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% get_static_prefix %}css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="hero-section">
+        <div class="hero-container">
+            <div class="content-part">
+                <div class="heading">
+                    <h1>Want higher rankings and more traffic?</h1>
+                </div>
+                <div class="para">
+                    <p>You’ve come to the right place. Backlinko is the place for next-level SEO training and link
+                        building strategies.</p>
+                </div>
+            </div>
+
+            <div class="hero-img-container">
+                <img src="{% get_static_prefix %}images/dummy-image.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="company-container">
+        <div class="container">
+            <div class="box1">
+                <img src="{% get_static_prefix %}images/asset 2.svg" alt="" />
+                <div class="para">
+                    <p>"Brian Dean is one of the world’s most sought-after SEO experts"</p>
+                </div>
+            </div>
+
+            <div class="box1">
+                <img src="{% get_static_prefix %}images/asset 3.svg" alt="" />
+                <div class="para">
+                    <p>“Exceptionally talented”</p>
+                </div>
+
+            </div>
+            <div class="box1">
+                <img src="{% get_static_prefix %}images/asset 4.svg" alt="" />
+                <div class="para">
+                    <p>"Backlinko: a recommended resource to become a better SEO"</p>
+                </div>
+
+            </div>
+            <div class="box1">
+                <img src="{% get_static_prefix %}images/asset 5.svg" alt="" />
+                <div class="para">
+                    <p>“SEO genius”</p>
+                </div>
+
+            </div>
+            <div class="box1">
+                <img src="{% get_static_prefix %}images/asset 6.svg" alt="" />
+                <div class="para">
+                    <p>“Backlinko is the place for next-level SEO training and link building strategies”</p>
+                </div>
+
+            </div>
+            <div class="box1">
+                <img src="{% get_static_prefix %}images/asset 7.svg" alt="" />
+                <div class="para">
+                    <p>“Brian Dean’s Backlinko Blog is the go-to SEO guide of many digital marketers and entrepreneurs”
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- section-2 -->
+
+    <div class="section-2-heading">
+        <h2>What Backlinko is all about</h2>
+    </div>
+
+    <div class="section-2-container">
+        <div class="content-container">
+            <div class="left-part">
+                <p>If you’ve ever wondered:</p>
+                <p>“Where can I find actionable SEO advice that gets results?”, you’re in the right place. Backlinko is
+                    where professional marketers turn for proven SEO advice.</p>
+                <p>My effective SEO advice is why marketers from companies like Apple, Disney, IBM, and Amazon subscribe
+                    to my email newsletter.</p>
+            </div>
+            <div class="right-part">
+                <h2>“Brian is a really smart SEO guy who knows what he’s talking about because he lives it every day.”
+                </h2>
+                <img src="{% get_static_prefix %}images/asset 2.svg" alt="" />
+            </div>
+        </div>
+    </div>
+
+
+    <!-- section-3 -->
+
+    <div class="section-3">
+        <div class="content-container">
+            <div class="heading">
+                <h2>Want actionable SEO advice from me? Then hop on the newsletter</h2>
+            </div>
+
+            <form action="{% url 'send_email' %}" method="POST" id="form">
+                {% csrf_token %}
+                <input type="email" name="user_email" id="email" placeholder="Email Address">
+                <button class="try">Try It</button>
+            </form>
+        </div>
+        <div class="logos-container">
+            <h3>TRUSTED BY</h3>
+            <img src="{% get_static_prefix %}images/asset 10.svg" alt="" />
+            <img src="{% get_static_prefix %}images/asset 11.svg" alt="" />
+            <img src="{% get_static_prefix %}images/asset 12.svg" alt="" />
+            <img src="{% get_static_prefix %}images/asset 13.svg" alt="" />
+        </div>
+    </div>
+
+
+    <!-- section-4 -->
+    <div class="section-4">
+        <div class="heading">
+            <h2>How Backlinko Helps You Get Higher Rankings and More Traffic</h2>
+        </div>
+
+        <div class="section-4-container">
+            <div class="content-container">
+                <img src="{% get_static_prefix %}images/dummy-image.jpg" alt="" />
+
+                <div class="content-part">
+                    <p>Most so-called “SEO experts” say: “To succeed with SEO, all you need to do is create great
+                        content.”</p>
+                    <p>If only it were that easy…</p>
+                    <p>I learned the hard way that there’s a lot more to SEO than “great content”.</p>
+                    <p>And that’s where Backlinko comes in.</p>
+                    <p>This blog is where I show you the exact tips, strategies and techniques you need to get higher
+                        rankings. No fluff or “high-level” advice. Just insanely actionable advice that works.</p>
+                    <p>Oh, while you’re here make sure you sign up for free updates to learn the proven SEO strategies
+                        that I’m talking about:</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- section-5 -->
+    <div class="section-5">
+        <div class="section-5-container">
+            <div class="heading">
+                <h2>Want higher rankings?</h2>
+            </div>
+            <div class="para">
+                <p>Then join 110,424 others (including top marketers from Apple, Disney, IBM, and Amazon) that get my weekly SEO tips via email.</p>
+            </div>
+            <form action="{% url 'send_email' %}" method="POST" id="form">
+                {% csrf_token %}
+                <input type="email" name="user_email" id="email" placeholder="Email Address">
+                <button class="try">Try It</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- section-6 -->
+    <div class="section-4-container section-6">
+
+        <div class="heading">
+            <h2>About Brian Dean</h2>
+        </div>
+        <div class="content-container">
+            <img src="{% get_static_prefix %}images/dummy-image.jpg" alt="" />
+
+            <div class="content-part">
+                <p>Dreamers was founded by Brian Dean, an internationally recognized SEO expert.</p>
+                <p>After failing with his first five online businesses, Brian finally struck gold with a site in the personal finance space in 2012. He created Backlinko to teach the lessons he learned along the way.</p>
+                <p>Since launching Backlinko, Brian quickly made a name for himself by publishing insanely practical strategies that marketers can use to grow their online business. Backlinko is now one of the most popular marketing blogs online.</p>
+
+
+                
+
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer-main">
+            <div class="footer-main-child1">
+                <div class="logo-footer-main">
+                    <p class="logo-footer">DREAMERS</p>
+                    <p>Next-level SEO training and link <br>building strategies</p>
+                </div>
+                <div class="learn-section">
+                    <p>Learn</p>
+                    <p><a href="">Blog</a></p>
+                    <p><a href="{% url 'newsletter' %}">Newsletter</a></p>
+                    <p><a href="">SEO training</a></p>
+                </div>
+                <div class="company-section">
+                    <p>Company</p>
+                    <p><a href="{% url 'home' %}">Home</a></p>
+                    <p><a href="{% url 'about_us' %}">About</a></p>
+                    <p><a href="">Contact US</a></p>
+                </div>
+                <div class="Connect-section">
+                    <p>Connect</p>
+                    <a href=""><i class="fa-brands fa-youtube fa-xl icons" style="color: #a5aaae;"></i></a>
+                   <a href=""> <i class="fa-brands fa-instagram fa-xl" style="color: #a5aaae;margin-left:10px;"></i></a>
+                   <a href=""> <i class="fa-brands fa-twitter fa-xl" style="color: #a5aaae;margin-left:10px;"></i></a>
+                </div>
+            </div>
+            <div class="footer-main-child2">
+                <div class="footer-main-child21">
+                    © 2023 Dreamers is a Trademark of Semrush Inc
+                </div>
+                <div class="footer-main-child22">
+                    <p><a href="">Terms Of Service</a></p>
+                    <p><a href="">Privacy Notice</a></p>
+                </div>
+    
+            </div>
+    
+        </div>
+    </footer>
+</body>

@@ -1,0 +1,54 @@
+<!-- blog_detail.html -->
+{% load django_browser_reload %}
+{% include 'nav.html' %}
+{% comment %} {% extends "base.html" %} {% endcomment %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% get_static_prefix %}css/style.css">
+{% endblock extra_css %}
+
+{% block content %}
+        <div class="background-blog" style="background-color: {{blog.background_color}};">
+        <div class="backgroung-blog-content">
+            <div class="backgroung-blog-content-heading">
+                <p>{{ blog.heading }}</p>
+                <p>{{ blog.pub_date }}</p>
+                <p>Written by Dreamers Team | collaboration with Nitesh</p>
+            </div>
+            <div class="backgroung-blog-content-image">
+                    <img src="{{blog.image.url}}" alt="">
+            </div>
+
+        </div>
+        <div class="backgroung-blog-main-blog">
+            <p> {{blog.title }}</p>
+        </div>
+        {% if related_posts %}
+    <div class="related_post_detail_page">
+        <p class="realted_post_p">Related Post</p>
+    <div class="blogs_post" id="original-posts">
+        {% for blog in related_posts %}
+
+        <a href="{% url 'blog_detail' slug=blog.slug %}">
+        <div class="post1">
+                <div class="image_div"><img src="{{blog.image.url}}" alt=""></div>
+                <div class="content">
+                    <p class="heading_blog">{{ blog.heading }}</p>
+                    <br>
+                    <!-- <p class="desc">{{blog.title |truncatechars:60}}<a
+                                href="{% url 'blog_detail' slug=blog.slug %}">Read more</a></p>
+                        <p class="pub_date">{{blog.pub_date}}</p> -->
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+    {% endif %}
+</div>
+
+{% endblock content %}
+
+
+

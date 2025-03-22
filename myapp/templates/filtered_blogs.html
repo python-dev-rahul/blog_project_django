@@ -1,0 +1,90 @@
+{% load django_browser_reload %}
+{% load static %}
+{% include 'nav.html' %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% get_static_prefix %}css/style.css">
+{% endblock extra_css %}
+
+<div class="post" id="blog-posts">
+    <p class="latest_blogs"> Latest How-To Guides</p>
+    <p class="latest_blogs_desc">Our latest and greatest step-by-step guides on all SEO, link building, and content marketing topics.</p>
+    <div class="blogs_post" id="original-posts">
+        {% if blogs %}
+        {% for blog in blogs %}
+            <div class="post1">
+                <a href="{% url 'blog_detail' slug=blog.slug %}"><div class="image_div"><img src="{{blog.image.url}}" alt=""></div>
+                <div class="content">
+                    <p class="heading_blog">{{ blog.heading }}</p>
+                    <br>
+                    <p class="desc">
+                            </a></p>
+
+                </div>
+            </div>
+        {% endfor %}
+        {% else %}
+        <p>No blogs found</p>
+        {% endif %}
+    </div>
+</div>
+
+<!-- <div class="post">
+    <div class="blogs_post">
+        {% if blogs %}
+        {% for blog in blogs %}
+            <div class="post1">
+                <div class="image_div"><img src="{{blog.image.url}}" alt=""></div>
+                <div class="content">
+                    <p class="heading_blog">{{ blog.heading }}</p>
+                    <br>
+                    <p class="desc">{{blog.title | truncatechars:60}}<a href="{% url 'blog_detail' slug=blog.slug %}">Read more</a></p>
+                    <p class="pub_date">{{blog.pub_date}}</p>
+                </div>
+            </div>
+        {% endfor %}
+        {% else %}
+        <p>no data found</p>
+        {% endif%}
+    </div>
+</div> -->
+
+<!-- footer -->
+<footer>
+    <div class="footer-main">
+        <div class="footer-main-child1">
+            <div class="logo-footer-main">
+                <p class="logo-footer">DREAMERS</p>
+                <p>Next-level SEO training and link <br>building strategies</p>
+            </div>
+            <div class="learn-section">
+                <p>Learn</p>
+                <p><a href="">Blog</a></p>
+                <p><a href="{% url 'newsletter' %}">Newsletter</a></p>
+                <p><a href="">SEO training</a></p>
+            </div>
+            <div class="company-section">
+                <p>Company</p>
+                <p><a href="{% url 'home' %}">Home</a></p>
+                <p><a href="{% url 'about_us' %}">About</a></p>
+                <p><a href="">Contact US</a></p>
+            </div>
+            <div class="Connect-section">
+                <p>Connect</p>
+                <a href=""><i class="fa-brands fa-youtube fa-xl icons" style="color: #a5aaae;"></i></a>
+               <a href=""> <i class="fa-brands fa-instagram fa-xl" style="color: #a5aaae;margin-left:10px;"></i></a>
+               <a href=""> <i class="fa-brands fa-twitter fa-xl" style="color: #a5aaae;margin-left:10px;"></i></a>
+            </div>
+        </div>
+        <div class="footer-main-child2">
+            <div class="footer-main-child21">
+                © 2023 Dreamers is a Trademark of Semrush Inc
+            </div>
+            <div class="footer-main-child22">
+                <p><a href="">Terms Of Service</a></p>
+                <p><a href="">Privacy Notice</a></p>
+            </div>
+
+        </div>
+
+    </div>
+</footer>

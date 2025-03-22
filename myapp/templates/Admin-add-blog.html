@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Add Blog</title>
+</head>
+
+<body>
+    <div class="sidebar-main">
+        <div class="sidebar">
+            <a href="{% url 'admin-add-blog' %}" class="button-add-blog">Add Blog</a><br>
+            <a href="{% url 'edit-blog' %}">Edit Blog</a><br>
+        </div>
+        <div class="sidebar-form">
+            <form novalidate action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                <span style="color: red;">{{ form.non_field_errors.as_text }}</span>
+                {% endif %}
+                {% for field in form %}
+                <p class="form-field">{{ field.label_tag }}</p>{{ field }}
+                {% if field.errors %}
+                <span style="color: red;">{{ field.errors.as_text }}</span><br>
+                {% endif %}
+                {% endfor %}
+
+                <button type="submit">Submit</button>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>

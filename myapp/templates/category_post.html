@@ -1,0 +1,29 @@
+{% include 'nav.html' %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% get_static_prefix %}css/style.css">
+{% endblock extra_css %}
+
+<div class="post" id="blog-posts">
+    <p class="latest_blogs"> Latest How-To Guides</p>
+    <p class="latest_blogs_desc">Our latest and greatest step-by-step guides on all SEO, link building, and content
+        marketing topics.</p>
+    <div class="blogs_post" id="original-posts">
+        {% for blog in post %}
+        <!-- <a href="#" class="post-link" data-slug="{{ blog.slug }}"> -->
+        <a href="{% url 'blog_detail' slug=blog.slug %}"  class="post-link" data-slug="{{ blog.slug }}">
+            <div class="post1">
+                <div class="image_div"><img src="{{blog.image.url}}" alt=""></div>
+                <div class="content">
+                    <p class="heading_blog">{{ blog.heading }}</p>
+                    <br>
+                    <!-- <p class="desc">{{blog.title |truncatechars:60}}<a
+                                href="{% url 'blog_detail' slug=blog.slug %}">Read more</a></p>
+                        <p class="pub_date">{{blog.pub_date}}</p> -->
+                </div>
+            </div>
+        </a>
+    <!-- </a> -->
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="89px" height="36px" viewBox="0 0 89 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>join-ibm</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="join-ibm" fill="#D3D3D3" fill-rule="nonzero">
+            <polygon id="Path" points="88.44 2.54 73.72 2.54 74.63 0 88.44 0"></polygon>
+            <path d="M49.2,0 L62.86,0 L63.76,2.54 L49.2,2.54 C49.2,2.54 49.19,0 49.2,0 Z" id="Path"></path>
+            <path d="M38.34,0 C40.5278634,0.169468777 42.5968599,1.06321897 44.22,2.54 L19.44,2.54 L19.44,0 L38.34,0 Z" id="Path"></path>
+            <rect id="Rectangle" x="0" y="0" width="17.21" height="2.54"></rect>
+            <path d="M88.44,7.3 L72,7.3 C72,7.3 72.9,4.78 72.89,4.78 L88.44,4.78 L88.44,7.3 Z" id="Path"></path>
+            <polygon id="Path" points="65.45 7.31 49.19 7.31 49.19 4.78 64.56 4.78"></polygon>
+            <path d="M46.15,4.78 C46.5567176,5.56252454 46.7983773,6.42024634 46.86,7.3 L19.45,7.3 L19.45,4.78 L46.15,4.78 Z" id="Path"></path>
+            <rect id="Rectangle" x="0" y="4.78" width="17.21" height="2.53"></rect>
+            <polygon id="Path" points="70.35 12.08 71.25 9.54 83.57 9.54 83.57 12.07"></polygon>
+            <polygon id="Path" points="66.24 9.54 67.14 12.08 54.04 12.08 54.04 9.54"></polygon>
+            <path d="M47.08,9.54 C47.0902843,10.4000745 46.9688789,11.2566573 46.72,12.08 L39.21,12.08 L39.21,9.54 L47.08,9.54 Z" id="Path"></path>
+            <rect id="Rectangle" x="4.8" y="9.55" width="7.4" height="2.53"></rect>
+            <rect id="Rectangle" x="24.43" y="9.54" width="7.38" height="2.54"></rect>
+            <polygon id="Path" points="61.32 14.82 61.32 16.74 54 16.74 54 14.22 67.91 14.22 68.77 16.57 69.6 14.22 83.6 14.22 83.6 16.74 76.33 16.74 76.33 14.82 75.66 16.74 62 16.74"></polygon>
+            <path d="M24.43,14.22 L45.63,14.22 C45.0822024,15.1788639 44.3715837,16.0349902 43.53,16.75 L24.43,16.75 L24.43,14.22 Z" id="Path"></path>
+            <rect id="Rectangle" x="4.8" y="14.21" width="7.4" height="2.53"></rect>
+            <rect id="Rectangle" x="76.33" y="18.98" width="7.24" height="2.53"></rect>
+            <path d="M61.32,19 L54,19 L54,21.5 L61.28,21.5 C61.28,21.5 61.33,19 61.32,19 Z" id="Path"></path>
+            <path d="M74.87,19 C74.87,19 74,21.5 74,21.5 L63.67,21.5 C63.67,21.5 62.77,18.96 62.77,18.97 L74.87,19 Z" id="Path"></path>
+            <path d="M24.43,19 L43.49,19 C44.3595838,19.7309605 45.1235352,20.5790474 45.76,21.52 C45.76,21.52 24.43,21.52 24.43,21.52 L24.43,19 Z" id="Path"></path>
+            <polygon id="Path" points="12.2 21.5 12.2 18.98 4.81 18.98 4.81 21.5"></polygon>
+            <rect id="Rectangle" x="76.33" y="23.74" width="7.24" height="2.53"></rect>
+            <rect id="Rectangle" x="54.04" y="23.74" width="7.27" height="2.53"></rect>
+            <path d="M72.29,26.28 C72.29,26.28 73.19,23.74 73.2,23.74 L64.43,23.74 C64.43,23.74 65.33,26.27 65.33,26.27 L72.29,26.28 Z" id="Path"></path>
+            <path d="M24.43,26.27 L24.43,23.74 L31.92,23.74 C31.92,23.74 31.92,26.27 31.92,26.27 L24.43,26.27 Z" id="Path"></path>
+            <path d="M46.81,23.74 C47.1202252,24.5509278 47.2795127,25.4117585 47.28,26.28 L39.34,26.28 L39.34,23.74 L46.81,23.74 Z" id="Path"></path>
+            <rect id="Rectangle" x="4.81" y="23.74" width="7.38" height="2.53"></rect>
+            <rect id="Rectangle" x="76.33" y="28.41" width="12.11" height="2.53"></rect>
+            <rect id="Rectangle" x="49.19" y="28.41" width="12.12" height="2.53"></rect>
+            <polygon id="Path" points="70.66 30.93 66.97 30.93 66.08 28.41 71.52 28.41"></polygon>
+            <path d="M0,28.41 L0,30.93 L17.2,30.93 C17.2,30.93 17.2,28.41 17.2,28.41 L0,28.41 Z" id="Path"></path>
+            <path d="M47,28.41 C46.8859598,29.3212613 46.5418203,30.1884928 46,30.93 L19.45,30.93 L19.45,28.41 L47,28.41 Z" id="Path"></path>
+            <polygon id="Path" points="68.99 35.7 68.65 35.7 67.78 33.17 69.88 33.17"></polygon>
+            <rect id="Rectangle" x="76.33" y="33.17" width="12.11" height="2.54"></rect>
+            <path d="M19.44,35.7 L19.44,33.17 L44.36,33.17 C42.6154231,34.7924464 40.3224075,35.6960803 37.94,35.7 L19.45,35.7" id="Path"></path>
+            <rect id="Rectangle" x="49.19" y="33.17" width="12.12" height="2.54"></rect>
+            <path d="M17.2,33.18 C17.2,33.18 17.2,35.7 17.2,35.7 L0,35.7 C0,35.7 0,33.16 0,33.16 C0,33.16 17.19,33.19 17.2,33.18 Z" id="Path"></path>
+        </g>
+    </g>
+</svg>
